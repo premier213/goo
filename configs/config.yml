@@ -1,3 +1,11 @@
 server:
   host: 127.0.0.1
   port: 5000
+database:
+  host: 172.17.0.5
+  user: postgres
+  password: "00213254"
+  dbName: example
+  port: 5432
+  sslMode: disable
+  timezone: Asia/Tehran

@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-
 	"github.com/gofiber/fiber/v2"
-	"github.com/premier213/goo/internal/routes"
 	"github.com/spf13/viper"
+	database "goo/configs"
+	route "goo/internal/routes"
 )
 
 func main() {
@@ -16,6 +16,8 @@ func main() {
 	if read := viper.ReadInConfig(); read != nil {
 		panic(read)
 	}
+
+	database.ConnectDb()
 
 	app := fiber.New()
 
