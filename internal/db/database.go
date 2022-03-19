@@ -19,7 +19,7 @@ var DB DbInstance
 func ConnectDb() {
 	viper.SetConfigName("config")
 	viper.SetConfigType("yml")
-	viper.AddConfigPath("./configs")
+	viper.AddConfigPath("../../config/config.yml")
 
 	host, port, user, password, dbname, sslmode, timezone := viper.Get("database.host"), viper.Get("database.port"), viper.Get("database.user"), viper.Get("database.password"), viper.Get("database.dbName"), viper.Get("database.sslMode"), viper.Get("database.timezone")
 
@@ -37,7 +37,7 @@ func ConnectDb() {
 		log.Fatal("Failed to connect to database", err)
 	}
 
-	log.Println("connected to database")
+	log.Println("connected to database 🔥")
 	db.Logger = logger.Default.LogMode(logger.Info)
 
 	DB = DbInstance{
