@@ -4,7 +4,7 @@ server:
 
 #database
 database:
-  dbhost: 172.17.0.5
+  host: 172.17.0.3
   user: postgres
   password: "00213254"
   dbName: example
@@ -13,4 +13,4 @@ database:
   timezone: Asia/Tehran
 
 # migration
-dsn: "postgres://127.0.0.1/example?sslmode=disable&user=postgres&password=00213254"
+dsn: "postgres://172.17.0.3/example?sslmode=disable&user=postgres&password=00213254"
