@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"github.com/gofiber/fiber/v2"
 	"github.com/spf13/viper"
-	database "goo/internal/db"
-	route "goo/internal/routes"
+	"goo/db"
+	"goo/routes"
 )
 
 func main() {
@@ -17,7 +17,7 @@ func main() {
 		panic(read)
 	}
 
-	database.ConnectDb()
+	db.ConnectDb()
 
 	app := fiber.New()
 

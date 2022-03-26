@@ -2,24 +2,25 @@ package user
 
 import (
 	"github.com/gofiber/fiber/v2"
-	database "goo/internal/db"
+	"goo/db"
+	"goo/pkg/models"
 )
 
 func AddUser(c *fiber.Ctx) error {
 
-	user := new(User)
+	user := new(models.User)
 	if err := c.BodyParser(user); err != nil {
 		return c.Status(400).JSON(err.Error())
 	}
 
-	database.DB.Db.Create(&user)
+	db.DB.Db.Create(&user)
 
 	return c.Status(200).JSON(user)
 }
 
 func AllUsers(c *fiber.Ctx) error {
-	user := []User{}
-	database.DB.Db.Find(&user)
+	user := []models.User{}
+	db.DB.Db.Find(&user)
 
 	return c.Status(200).JSON(user)
 

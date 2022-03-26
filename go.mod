@@ -3,18 +3,16 @@ module goo
 go 1.18
 
 require (
-	github.com/gofiber/fiber/v2 v2.29.0
+	github.com/gofiber/fiber/v2 v2.30.0
+	github.com/google/uuid v1.3.0
 	github.com/spf13/viper v1.10.1
 	gorm.io/driver/postgres v1.3.1
-	gorm.io/gorm v1.23.2
+	gorm.io/gorm v1.23.3
 )
-
-require github.com/google/uuid v1.3.0 // indirect
 
 require (
 	github.com/andybalholm/brotli v1.0.4 // indirect
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
-	github.com/gofrs/uuid v4.2.0+incompatible
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/jackc/chunkreader/v2 v2.0.1 // indirect
 	github.com/jackc/pgconn v1.10.1 // indirect

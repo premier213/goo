@@ -2,7 +2,7 @@ CONFIG ?= ./config/config.yml
 APP_DSN ?= $(shell sed -n 's/^dsn:[[:space:]]*"\(.*\)"/\1/p' $(CONFIG))
 
 run: 
-	@nodemon --exec go run ./cmd/server/goo.go --signal SIGTERM
+	@go run ./cmd/server/goo.go
 
 build: 
 	@go build -o bin/goo cmd/server/goo.go 

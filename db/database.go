@@ -1,13 +1,13 @@
-package database
+package db
 
 import (
 	"fmt"
-	"log"
-
 	"github.com/spf13/viper"
+	"goo/pkg/migrations"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
+	"log"
 )
 
 type DbInstance struct {
@@ -39,6 +39,8 @@ func ConnectDb() {
 
 	log.Println("connected to database 🔥")
 	db.Logger = logger.Default.LogMode(logger.Info)
+
+	migrations.AutoMigrateDB(db)
 
 	DB = DbInstance{
 		Db: db,
