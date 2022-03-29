@@ -33,10 +33,11 @@ func AddUser(c *fiber.Ctx) error {
 
 }
 
+// show all users
 func AllUsers(c *fiber.Ctx) error {
-	user := []model.User{}
-	database.DB.Db.Find(&user)
+	// user := []model.User{}
+	us := []model.Mp4{}
+	database.DB.Db.Table("users").Select("username,password").Find(&us)
 
-	return c.Status(200).JSON(user)
-
+	return c.Status(200).JSON(us)
 }
