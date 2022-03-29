@@ -2,7 +2,7 @@ package migration
 
 import (
 	"fmt"
-	"goo/pkg/model"
+	"goo/app/model"
 	"log"
 
 	"gorm.io/gorm"

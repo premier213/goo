@@ -1,6 +1,6 @@
 package model
 
-import hook "goo/pkg/hooks"
+import hook "goo/platform/hooks"
 
 type User struct {
 	hook.Base

@@ -1,8 +1,8 @@
-package errs
+package utils
 
 type Mp map[string]interface{}
 
-var m = map[string]map[string]string{
+var d = map[string]map[string]string{
 	"users_username_key": {
 		"23505": "username is Already exist",
 		"code":  "1400",
@@ -17,8 +17,8 @@ var m = map[string]map[string]string{
 func DbError(c, f string) *Mp {
 	res := Mp{
 		"Error": true,
-		"Msg":   m[f][c],
-		"Code":  m[f]["code"],
+		"Msg":   d[f][c],
+		"Code":  d[f]["code"],
 	}
 
 	return &res

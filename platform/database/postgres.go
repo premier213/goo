@@ -1,9 +1,9 @@
-package db
+package database
 
 import (
 	"fmt"
 	"github.com/spf13/viper"
-	"goo/pkg/migration"
+	"goo/platform/migration"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"

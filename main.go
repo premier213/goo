@@ -4,20 +4,20 @@ import (
 	"fmt"
 	"github.com/gofiber/fiber/v2"
 	"github.com/spf13/viper"
-	"goo/db"
-	"goo/routes"
+	"goo/pkg/routes"
+	"goo/platform/database"
 )
 
 func main() {
 	viper.SetConfigName("config")
 	viper.SetConfigType("yml")
-	viper.AddConfigPath("./config")
+	viper.AddConfigPath("./pkg/configs")
 
 	if read := viper.ReadInConfig(); read != nil {
 		panic(read)
 	}
 
-	db.ConnectDb()
+	database.ConnectDb()
 
 	app := fiber.New()
 

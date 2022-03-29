@@ -1,9 +1,7 @@
-package validator
+package utils
 
 import (
-	"fmt"
 	"github.com/go-playground/validator/v10"
-	"goo/pkg/errs"
 )
 
 var m = map[string]map[string]map[string]string{
@@ -26,9 +24,8 @@ var validate = validator.New()
  * @params t validation tag
  * return validation struct message with code and constraint name error
  */
-func valid(f string, t string) *errs.Mp {
-	fmt.Println(f, t)
-	res := errs.Mp{
+func valid(f string, t string) *Mp {
+	res := Mp{
 		"Error": true,
 		"Msg":   m[f][t]["msg"],
 		"Code":  m[f][t]["code"],
@@ -37,8 +34,8 @@ func valid(f string, t string) *errs.Mp {
 	return &res
 }
 
-func ValidateStruct(v interface{}) *errs.Mp {
-	var res *errs.Mp
+func ValidateStruct(v interface{}) *Mp {
+	var res *Mp
 	err := validate.Struct(v)
 	if err != nil {
 		for _, err := range err.(validator.ValidationErrors) {

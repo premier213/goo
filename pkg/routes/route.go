@@ -2,7 +2,7 @@ package route
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"goo/pkg/controller"
+	"goo/app/controller"
 )
 
 func SetupRoute(app *fiber.App) {
