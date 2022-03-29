@@ -1,21 +1,21 @@
-package migrations
+package migration
 
 import (
 	"fmt"
-	"goo/pkg/models"
+	"goo/pkg/model"
 	"log"
 
 	"gorm.io/gorm"
 )
 
-var model = []interface{}{
-	&models.User{},
+var models = []interface{}{
+	&model.User{},
 }
 
 func AutoMigrateDB(DB *gorm.DB) error {
 	log.Println("Running migrations")
 
-	if err := DB.AutoMigrate(model...); err != nil {
+	if err := DB.AutoMigrate(models...); err != nil {
 		fmt.Println(err)
 	}
 	return nil

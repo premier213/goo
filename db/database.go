@@ -3,7 +3,7 @@ package db
 import (
 	"fmt"
 	"github.com/spf13/viper"
-	"goo/pkg/migrations"
+	"goo/pkg/migration"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -40,7 +40,7 @@ func ConnectDb() {
 	log.Println("connected to database 🔥")
 	db.Logger = logger.Default.LogMode(logger.Info)
 
-	migrations.AutoMigrateDB(db)
+	migration.AutoMigrateDB(db)
 
 	DB = DbInstance{
 		Db: db,
