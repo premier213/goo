@@ -13,6 +13,9 @@ func main() {
 	viper.SetConfigName("config")
 	viper.SetConfigType("yml")
 	viper.AddConfigPath("./pkg/configs")
+	// generate := uuid.New().String()
+
+	// fmt.Println(string(generate[:5]))
 
 	if read := viper.ReadInConfig(); read != nil {
 		panic(read)
