@@ -1,0 +1,23 @@
+server:
+  host: 127.0.0.1
+  port: 5000
+
+#database
+database:
+  host: 127.0.0.1
+  user: postgres
+  password: "***"
+  dbName: example
+  port: 5432
+  sslMode: disable
+  timezone: Asia/Tehran
+
+# migration
+dsn: "postgres://172.17.0.5/example?sslmode=disable&user=postgres&password=***"
+
+#mail server
+mail:
+  server: ***
+  smtpPort: 465
+  username: ***
+  password: ***
